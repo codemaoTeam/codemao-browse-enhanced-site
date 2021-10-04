@@ -1,18 +1,21 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+  <div>
+    <h1 class="title">全面强化体验</h1>
+    <p class="descripition">
+      Codemao Browse Enhanced（CBE）是一个 Chrome
+      扩展，可以让你以更便捷的方式访问编程猫社区官网。
+    </p>
   </div>
 </template>
 
-<script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
+<style scoped>
+.title {
+  font-size: 4.5em;
+}
 
-export default {
-  name: "Home",
-  components: {
-    HelloWorld,
-  },
-};
-</script>
+.descripition {
+  font-size: 1.4em;
+  line-height: 1.9em;
+  color: #9292a6;
+}
+</style>

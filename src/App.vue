@@ -1,32 +1,62 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view />
+    <el-container>
+      <el-header>
+        <el-menu :default-active="$route.path" mode="horizontal" router>
+          <el-menu-item index="/">
+            CBE
+            <i style="font-size: 0.8em">{{ version }}</i>
+          </el-menu-item>
+          <el-menu-item index="/doc">帮助文档</el-menu-item>
+          <el-menu-item index="/download" style="float: right">
+            下载
+          </el-menu-item>
+        </el-menu>
+      </el-header>
+
+      <el-main>
+        <router-view />
+      </el-main>
+
+      <el-footer height="200px">
+        <el-divider />
+        <div>
+          <p>
+            <span>友情链接：</span>
+            <span v-for="(link, index) in friendshipLinks" :key="link.name">
+              <el-link
+                :underline="false"
+                :href="link.link"
+                target="_blank"
+                style="font-size: 16px"
+              >
+                {{ link.name }}
+              </el-link>
+              <span v-if="index != friendshipLinks.length - 1">|</span>
+            </span>
+          </p>
+          <p>开发者：简单得不简单(Dago)</p>
+        </div>
+      </el-footer>
+    </el-container>
   </div>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+<script>
+export default {
+  data() {
+    return {
+      version: 'v0.3.1',
+      friendshipLinks: [
+        { name: '编程猫社区', link: 'https://shequ.codemao.cn' },
+      ],
+    };
+  },
+};
+</script>
+
+<style scoped>
+.el-footer {
   text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
 }
 </style>
