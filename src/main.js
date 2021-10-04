@@ -11,6 +11,8 @@ Vue.use(ElementUI);
 router.beforeEach((to, from, next) => {
   if (to.meta.title) {
     document.title = `CBE | ${to.meta.title}`;
+  } else {
+    document.title = 'Codemao Browse Enhanced';
   }
   next();
 });
