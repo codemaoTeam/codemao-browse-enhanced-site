@@ -86,4 +86,8 @@ h1 {
   color: #4154b5;
   margin: 0 auto 120px auto;
 }
+
+.el-card {
+  margin-bottom: 10px;
+}
 </style>
