@@ -28,7 +28,16 @@
                 >
                   {{ question.label }}
                 </el-link>
-                <i title="最早出现在扩展中的版本号">{{ question.version }}</i>
+                <el-tag v-if="question.version" style="margin-left: 10px">
+                  {{ question.version }}
+                </el-tag>
+                <el-tag
+                  v-if="question.maybe"
+                  type="warning"
+                  style="margin-left: 10px"
+                >
+                  可能
+                </el-tag>
               </span>
             </div>
             <div v-html="question.content"></div>
@@ -78,19 +87,22 @@ export default {
             {
               label: '反屏蔽链接',
               id: 'feature-display-link',
-              version: '>= v1.1.0 maybe',
+              version: '>= v1.1.0',
+              maybe: true,
               content: '目前社区会把链接屏蔽成“喵喵喵”，此功能让链接正常显示',
             },
             {
               label: '学术模式',
               id: 'feature-academic-mode',
-              version: '>= v1.1.0 maybe',
+              version: '>= v1.1.0',
+              maybe: true,
               content: '隐藏一些与学编程无关的内容',
             },
             {
               label: '自定义主题',
               id: 'feature-persional-theme',
-              version: '>= v1.1.0 maybe',
+              version: '>= v1.1.0 ',
+              maybe: true,
               content: '自定义社区某些地方的CSS样式',
             },
             {
