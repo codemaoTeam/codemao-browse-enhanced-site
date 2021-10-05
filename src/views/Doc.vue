@@ -58,7 +58,7 @@ export default {
               label: '安装报错？',
               id: 'error-on-installing',
               content: `如果出现类似这样的提示：
-              <br><pre>程序包无效。详细信息: "Invalid value for 'web. acessible resources[0]."</pre>
+              <br><pre>程序包无效。详细信息： "Invalid value for 'web_acessible_resources[0]."</pre>
               说明chrome版本较旧（低于88），安装最新版本谷歌浏览器即可
               <hr>谷歌在chrome88中推出了新的浏览器扩展版本（manifest version 3），它与之前的浏览器（支持的的扩展）不兼容`,
             },
