@@ -43,6 +43,7 @@ export default {
           content: [
             { name: '编程猫社区', link: 'https://shequ.codemao.cn' },
             { name: '布丁工具箱', link: 'https://box.svipking.top' },
+            { name: 'Codemao API 文档', link: 'https://api.docs.codemao.work' },
           ],
         },
         {
