@@ -1,11 +1,13 @@
 <template>
   <div>
-    <div>
-      <h1 class="title">全面强化体验</h1>
+    <div class="banner">
       <p class="descripition">
-        Codemao Browse Enhanced（CBE）是一个 Chrome
-        扩展，可以让你以更便捷的方式访问编程猫社区官网。
+        Codemao Browse Enhanced 是一个 Chrome扩展，
+        可以让你以更便捷的方式访问编程猫社区官网。
       </p>
+      <el-button @click="$router.push('/download')">
+        立刻开始使用
+      </el-button>
     </div>
 
     <div>
@@ -32,7 +34,6 @@
 export default {
   data() {
     return {
-      reverse: true,
       activities: [
         {
           content: '添加暗黑模式',
@@ -104,13 +105,23 @@ export default {
 </script>
 
 <style scoped>
-.title {
-  font-size: 4.5em;
+.banner {
+  text-align: center;
 }
 
 .descripition {
-  font-size: 1.4em;
+  font-size: 2em;
   line-height: 1.9em;
   color: #9292a6;
+  max-width: 700px;
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 50px;
+  margin-top: 50px;
+}
+
+.el-button {
+  font-size: 20px;
+  padding: 1em 50px 1.1em;
 }
 </style>
