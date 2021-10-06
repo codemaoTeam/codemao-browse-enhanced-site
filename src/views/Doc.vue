@@ -106,18 +106,17 @@ export default {
               content: '目前社区会把链接屏蔽成“喵喵喵”，此功能让链接正常显示',
             },
             {
-              label: '学术模式',
-              id: 'feature-academic-mode',
-              version: '> v1.1.0',
-              maybe: true,
-              content: '隐藏一些与学编程无关的内容',
-            },
-            {
               label: '自定义主题',
               id: 'feature-persional-theme',
               version: '> v1.1.0 ',
               maybe: true,
               content: '自定义社区某些地方的CSS样式',
+            },
+            {
+              label: '学术模式',
+              id: 'feature-academic-mode',
+              version: 'v1.2.0',
+              content: '隐藏一些与学编程无关的内容',
             },
             {
               label: '暗黑模式',

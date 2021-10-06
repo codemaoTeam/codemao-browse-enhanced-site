@@ -11,21 +11,25 @@
     </div>
 
     <div>
-      <h1>更新时间线</h1>
-      <el-timeline>
-        <el-timeline-item
-          v-for="(activity, index) in activities"
-          :key="index"
-          :icon="activity.icon"
-          :type="activity.type"
-          :color="activity.color"
-          :size="activity.size"
-          :timestamp="activity.timestamp"
-        >
-          <el-tag>{{ activity.version }}</el-tag>
-          {{ activity.content }}
-        </el-timeline-item>
-      </el-timeline>
+      <el-card>
+        <div slot="header" class="clearfix">
+          <span>更新时间线</span>
+        </div>
+        <el-timeline class="infinite-list" v-infinite-scroll="load">
+          <el-timeline-item
+            v-for="(activity, index) in activities"
+            :key="index"
+            :icon="activity.icon"
+            :type="activity.type"
+            :color="activity.color"
+            :size="activity.size"
+            :timestamp="activity.timestamp"
+          >
+            <el-tag>{{ activity.version }}</el-tag>
+            {{ activity.content }}
+          </el-timeline-item>
+        </el-timeline>
+      </el-card>
     </div>
   </div>
 </template>
@@ -34,7 +38,13 @@
 export default {
   data() {
     return {
-      activities: [
+      count: 5,
+      preActivities: [
+        {
+          content: '添加学术模式',
+          timestamp: '2021-12',
+          version: 'v1.2.0',
+        },
         {
           content: '添加暗黑模式',
           timestamp: '2021-11',
@@ -101,6 +111,16 @@ export default {
       ],
     };
   },
+  computed: {
+    activities() {
+      return this.preActivities.slice(0, this.count);
+    },
+  },
+  methods: {
+    load() {
+      this.count += 2;
+    },
+  },
 };
 </script>
 
@@ -123,5 +143,11 @@ export default {
 .el-button {
   font-size: 20px;
   padding: 1em 50px 1.1em;
+  margin-bottom: 70px;
+}
+
+.infinite-list {
+  overflow: auto;
+  height: 380px;
 }
 </style>
