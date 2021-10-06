@@ -27,16 +27,6 @@ export default {
       count: 5,
       preActivities: [
         {
-          content: '添加学术模式',
-          timestamp: '2021-12',
-          version: 'v1.2.0',
-        },
-        {
-          content: '添加暗黑模式',
-          timestamp: '2021-11',
-          version: 'v1.1.0',
-        },
-        {
           content: '正式版本发布',
           timestamp: '2021-10',
           version: 'v1.0.0',
