@@ -29,6 +29,7 @@
           >
             <p>{{ links.name }}</p>
             <List :data="links.content" />
+            <div class="sep"></div>
           </el-col>
         </el-row>
         <p>
@@ -42,6 +43,7 @@
           上开源
         </p>
         <p>© 2021 Dago</p>
+        <div class="placeholder"></div>
       </el-footer>
     </el-container>
   </div>
@@ -88,5 +90,20 @@ export default {
 <style scoped>
 .el-footer {
   text-align: center;
+}
+
+.sep {
+  display: none;
+  height: 10px;
+}
+
+.placeholder {
+  height: 20px;
+}
+
+@media (max-width: 992px) {
+  .sep {
+    display: block;
+  }
 }
 </style>
