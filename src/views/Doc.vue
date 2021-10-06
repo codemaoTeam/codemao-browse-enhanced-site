@@ -14,6 +14,7 @@
           <el-link
             :href="`#${questionType.id}`"
             :id="questionType.id"
+            :underline="false"
             style="font-size: 20px"
           >
             <h1>{{ questionType.label }}</h1>
