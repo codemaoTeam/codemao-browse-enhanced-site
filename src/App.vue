@@ -7,6 +7,7 @@
 
       <el-main>
         <router-view />
+        <el-backtop />
       </el-main>
 
       <el-footer>
