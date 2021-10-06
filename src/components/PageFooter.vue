@@ -45,12 +45,6 @@ export default {
           ],
         },
         {
-          name: '特别鸣谢',
-          content: [
-            { name: '土拨鼠', link: 'https://shequ.codemao.cn/user/2695330' },
-          ],
-        },
-        {
           name: '开发者',
           content: [
             {
@@ -60,11 +54,21 @@ export default {
           ],
         },
         {
-          name: '联系我们',
+          name: '特别鸣谢',
+          content: [
+            { name: '土拨鼠', link: 'https://shequ.codemao.cn/user/2695330' },
+          ],
+        },
+        {
+          name: '更多',
           content: [
             {
               name: 'QQ 群',
               link: 'https://jq.qq.com/?_wv=1027&k=W15hPcPZ',
+            },
+            {
+              name: '赞助',
+              link: 'https://afdian.net/@DagoYoung',
             },
           ],
         },
