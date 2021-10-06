@@ -1,6 +1,7 @@
 <template>
   <el-container>
     <el-aside width="350px">
+      <!-- 菜单 -->
       <el-tree
         :data="questionTree"
         @node-click="handleNodeClick"
@@ -9,6 +10,12 @@
       ></el-tree>
     </el-aside>
     <el-main>
+      <!-- 说明 -->
+      <el-alert title="重要声明" type="warning" :closable="false" show-icon>
+        标题后的版本号表示最早出现在的正式版本号，如果带有“可能”标签，
+        说明不保证会出现在后期更新中，解释权归作者所有
+      </el-alert>
+      <!-- 文档类型 -->
       <div v-for="questionType in questionTree" :key="questionType.id">
         <el-link
           :href="`#${questionType.id}`"
@@ -18,6 +25,7 @@
         >
           <h1>{{ questionType.label }}</h1>
         </el-link>
+        <!-- 单个条目 -->
         <el-card v-for="question in questionType.children" :key="question.id">
           <div slot="header" class="clearfix">
             <span>
