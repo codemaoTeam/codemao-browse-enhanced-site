@@ -17,6 +17,7 @@
       <el-link
         :underline="false"
         href="https://github.com/dagoyounger/codemao-browse-enhanced-site"
+        target="_blank"
       >
         Github
       </el-link>
@@ -55,6 +56,15 @@ export default {
             {
               name: '简单得不简单(Dago)',
               link: 'https://github.com/dagoyounger',
+            },
+          ],
+        },
+        {
+          name: '联系我们',
+          content: [
+            {
+              name: 'QQ 群',
+              link: 'https://jq.qq.com/?_wv=1027&k=W15hPcPZ',
             },
           ],
         },
