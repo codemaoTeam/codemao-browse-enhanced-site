@@ -18,13 +18,14 @@
         <router-view />
       </el-main>
 
-      <el-footer height="250px">
+      <el-footer>
         <el-divider />
-        <el-row :gutter="20">
+        <el-row>
           <el-col
             v-for="links in footerLinks"
             :key="links.name"
-            :span="24 / footerLinks.length"
+            :span="24"
+            :md="24 / footerLinks.length"
           >
             <p>{{ links.name }}</p>
             <List :data="links.content" />

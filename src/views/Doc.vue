@@ -1,6 +1,6 @@
 <template>
   <el-container>
-    <el-aside>
+    <el-aside width="350px">
       <el-tree
         :data="questionTree"
         @node-click="handleNodeClick"
@@ -8,44 +8,42 @@
         default-expand-all
       ></el-tree>
     </el-aside>
-    <el-container>
-      <el-main>
-        <div v-for="questionType in questionTree" :key="questionType.id">
-          <el-link
-            :href="`#${questionType.id}`"
-            :id="questionType.id"
-            :underline="false"
-            style="font-size: 20px"
-          >
-            <h1>{{ questionType.label }}</h1>
-          </el-link>
-          <el-card v-for="question in questionType.children" :key="question.id">
-            <div slot="header" class="clearfix">
-              <span>
-                <el-link
-                  :href="`#${question.id}`"
-                  :id="question.id"
-                  style="font-size: 16px"
-                >
-                  {{ question.label }}
-                </el-link>
-                <el-tag v-if="question.version" style="margin-left: 10px">
-                  {{ question.version }}
-                </el-tag>
-                <el-tag
-                  v-if="question.maybe"
-                  type="warning"
-                  style="margin-left: 10px"
-                >
-                  可能
-                </el-tag>
-              </span>
-            </div>
-            <div v-html="question.content"></div>
-          </el-card>
-        </div>
-      </el-main>
-    </el-container>
+    <el-main>
+      <div v-for="questionType in questionTree" :key="questionType.id">
+        <el-link
+          :href="`#${questionType.id}`"
+          :id="questionType.id"
+          :underline="false"
+          style="font-size: 20px"
+        >
+          <h1>{{ questionType.label }}</h1>
+        </el-link>
+        <el-card v-for="question in questionType.children" :key="question.id">
+          <div slot="header" class="clearfix">
+            <span>
+              <el-link
+                :href="`#${question.id}`"
+                :id="question.id"
+                style="font-size: 16px"
+              >
+                {{ question.label }}
+              </el-link>
+              <el-tag v-if="question.version" style="margin-left: 10px">
+                {{ question.version }}
+              </el-tag>
+              <el-tag
+                v-if="question.maybe"
+                type="warning"
+                style="margin-left: 10px"
+              >
+                可能
+              </el-tag>
+            </span>
+          </div>
+          <div v-html="question.content"></div>
+        </el-card>
+      </div>
+    </el-main>
   </el-container>
 </template>
 
@@ -165,11 +163,20 @@ export default {
 
 <style scoped>
 .el-aside {
-  padding-top: 20px;
-  padding-left: 20px;
+  padding: 20px;
 }
 
 .el-card {
   margin-bottom: 10px;
+}
+
+@media (max-width: 992px) {
+  .el-aside {
+    width: 100% !important;
+  }
+
+  .el-container {
+    display: block;
+  }
 }
 </style>
