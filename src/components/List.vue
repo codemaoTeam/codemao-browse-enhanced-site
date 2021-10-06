@@ -1,6 +1,6 @@
 <template>
-  <p>
-    <span v-for="(item, index) in data" :key="item.name">
+  <div>
+    <p v-for="item in data" :key="item.name" class="link">
       <el-link
         :underline="false"
         :href="item.link"
@@ -9,11 +9,8 @@
       >
         {{ item.name }}
       </el-link>
-      <span v-if="index != data.length - 1">
-        &nbsp;|&nbsp;
-      </span>
-    </span>
-  </p>
+    </p>
+  </div>
 </template>
 
 <script>
@@ -21,3 +18,9 @@ export default {
   props: ['data'],
 };
 </script>
+
+<style scoped>
+.link {
+  margin: 5px 0;
+}
+</style>
