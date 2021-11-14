@@ -2,6 +2,14 @@
   <el-card>
     <div slot="header" class="clearfix">
       <span>更新时间线</span>
+      <el-link
+        class="more"
+        :underline="false"
+        href="https://github.com/dagoyounger/codemao-browse-enhanced/releases"
+        target="_blank"
+      >
+        查看详情
+      </el-link>
     </div>
     <el-timeline class="infinite-list" v-infinite-scroll="load">
       <el-timeline-item
@@ -28,26 +36,8 @@ export default {
       preActivities: [
         {
           content: '正式版本发布',
-          timestamp: '2021-10',
+          timestamp: '2021-11',
           version: 'v1.0.0',
-        },
-        {
-          content: '缩短图床上传后 URL 的长度',
-          timestamp: '2021-09-21',
-          version: 'v1.0.0-beta.1',
-          type: 'warning',
-        },
-        {
-          content: '缩短图床上传后 URL 的长度',
-          timestamp: '2021-09-21',
-          version: 'v1.0.0-nightly.20210921',
-          type: 'success',
-        },
-        {
-          content: '添加编程猫图床功能',
-          timestamp: '2021-09-12',
-          version: 'v1.0.0-nightly.20210912',
-          type: 'success',
         },
         {
           content: '修复部分普通帖子渲染时内容被吞的 bug',
@@ -64,19 +54,12 @@ export default {
           size: 'large',
         },
         {
-          content: '添加反屏蔽词功能',
-          timestamp: '2021-09-05',
-          version: 'v1.0.0-nightly.20210905',
-          type: 'success',
-        },
-        {
           content: '添加修改页面标题功能',
           timestamp: '2021-09-04',
           version: 'v0.2.0',
           type: 'primary',
           size: 'large',
         },
-
         {
           content: '测试版本发布',
           timestamp: '2021-08-31',
@@ -101,6 +84,11 @@ export default {
 </script>
 
 <style scoped>
+.more {
+  float: right;
+  padding: 3px 0;
+}
+
 .infinite-list {
   overflow: auto;
   height: 380px;
