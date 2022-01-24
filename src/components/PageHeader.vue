@@ -5,6 +5,7 @@
       <i style="font-size: 0.8em">{{ version }}</i>
     </el-menu-item>
     <el-menu-item index="/doc">帮助文档</el-menu-item>
+    <el-menu-item index="/promote">推广奖励计划</el-menu-item>
     <el-menu-item index="/download" style="float: right">
       下载
     </el-menu-item>

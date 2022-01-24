@@ -3,6 +3,7 @@ import VueRouter from 'vue-router';
 import Home from '../views/Home.vue';
 import Doc from '../views/Doc.vue';
 import Download from '../views/Download.vue';
+import Promote from '../views/Promote.vue';
 
 Vue.use(VueRouter);
 
@@ -26,6 +27,14 @@ const routes = [
     component: Download,
     meta: {
       title: '下载',
+    },
+  },
+  {
+    path: '/promote',
+    name: 'Promote',
+    component: Promote,
+    meta: {
+      title: '推广奖励计划',
     },
   },
 ];
