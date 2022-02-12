@@ -36,7 +36,7 @@ export default {
       preActivities: [
         {
           content: '正式版本发布',
-          timestamp: '2021-11',
+          timestamp: '2022-01-25',
           version: 'v1.0.0',
         },
         {

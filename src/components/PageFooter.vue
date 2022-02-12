@@ -23,7 +23,7 @@
       </el-link>
       上开源
     </p>
-    <p>© 2021 Dago</p>
+    <p>© 2021-2022 Dago</p>
     <div class="placeholder"></div>
   </div>
 </template>
